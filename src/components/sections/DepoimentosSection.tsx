@@ -27,7 +27,8 @@ export const DepoimentosSection: React.FC = () => {
             <motion.div key={active}
               initial={{ opacity: 0, x: 40 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -40 }}
               transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              style={{ background: 'var(--color-white)', borderRadius: '28px', padding: '3rem', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--color-border)', position: 'relative', overflow: 'hidden' }}
+              className="p-6 md:p-12"
+              style={{ background: 'var(--color-white)', borderRadius: '28px', boxShadow: 'var(--shadow-lg)', border: '1px solid var(--color-border)', position: 'relative', overflow: 'hidden' }}
             >
               {/* Bg accent */}
               <div style={{ position: 'absolute', top: 0, right: 0, width: '200px', height: '200px', background: 'radial-gradient(circle, rgba(124,179,66,0.08) 0%, transparent 70%)', borderRadius: '0 28px 0 100%' }} />

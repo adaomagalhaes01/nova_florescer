@@ -4,8 +4,8 @@ import { Phone, Mail, MapPin, MessageCircle } from 'lucide-react';
 export const Footer: React.FC = () => {
   return (
     <footer style={{ background: 'var(--color-primary)', color: 'white', paddingTop: '4rem', paddingBottom: '2rem' }}>
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '3rem', paddingBottom: '3rem', borderBottom: '1px solid rgba(255,255,255,0.15)' }}>
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-white/15">
           {/* Brand */}
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem' }}>
@@ -80,7 +80,7 @@ export const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div style={{ paddingTop: '2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-center md:text-left">
           <p style={{ fontSize: '0.8125rem', opacity: 0.55 }}>
             © 2025 Novo Florescer Terapêutico. Todos os direitos reservados.
           </p>

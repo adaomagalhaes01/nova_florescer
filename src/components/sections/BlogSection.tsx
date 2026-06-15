@@ -23,7 +23,7 @@ export const BlogSection: React.FC = () => (
         </a>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {blogPosts.map((post, i) => (
           <motion.article key={post.id}
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}

@@ -63,7 +63,7 @@ export const HeroSection: React.FC = () => {
       </motion.div>
 
       {/* Main content */}
-      <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '7rem 1.5rem 4rem', width: '100%', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '3rem', alignItems: 'center', position: 'relative', zIndex: 1 }}>
+      <div className="max-w-7xl mx-auto px-6 pt-28 pb-16 w-full grid grid-cols-1 lg:grid-cols-2 gap-12 items-center relative z-10">
         {/* Text */}
         <motion.div style={{ y: textY }}>
           {/* Tag */}

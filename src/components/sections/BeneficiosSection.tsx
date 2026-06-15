@@ -35,7 +35,7 @@ export const BeneficiosSection: React.FC = () => (
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {benefits.map((b, i) => (
           <motion.div key={b.id}
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}

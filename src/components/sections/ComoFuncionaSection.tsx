@@ -22,7 +22,7 @@ export const ComoFuncionaSection: React.FC = () => (
       </motion.div>
 
       {/* Steps */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0', position: 'relative' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-0 relative">
         {/* Connector line (desktop) */}
         <div style={{ position: 'absolute', top: '40px', left: '12.5%', right: '12.5%', height: '2px', background: 'linear-gradient(90deg, #0F5B3A, #7CB342)', zIndex: 0, opacity: 0.3, display: 'none' }} className="step-connector" />
         {howItWorks.map((step, i) => (
@@ -33,7 +33,7 @@ export const ComoFuncionaSection: React.FC = () => (
           >
             {/* Connector between steps */}
             {i < howItWorks.length - 1 && (
-              <div style={{ position: 'absolute', top: '40px', left: '75%', right: '-25%', height: '2px', background: 'linear-gradient(90deg, rgba(15,91,58,0.3), rgba(124,179,66,0.1))', display: 'flex', alignItems: 'center', zIndex: 0 }} className="step-line">
+              <div className="hidden lg:flex items-center" style={{ position: 'absolute', top: '40px', left: '75%', right: '-25%', height: '2px', background: 'linear-gradient(90deg, rgba(15,91,58,0.3), rgba(124,179,66,0.1))', zIndex: 0 }}>
                 <div style={{ width: '6px', height: '6px', borderRadius: '50%', background: 'var(--color-accent)', marginLeft: 'auto' }} />
               </div>
             )}

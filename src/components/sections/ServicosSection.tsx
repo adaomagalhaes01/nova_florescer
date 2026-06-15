@@ -10,7 +10,7 @@ const iconMap: Record<string, React.ReactNode> = {
 
 export const ServicosSection: React.FC = () => (
   <section id="servicos" style={{ padding: '6rem 0', background: 'linear-gradient(180deg, var(--color-bg) 0%, rgba(165,214,167,0.08) 100%)' }}>
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
+    <div className="max-w-7xl mx-auto px-6">
       <motion.div initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
         transition={{ duration: 0.6 }} style={{ textAlign: 'center', marginBottom: '3.5rem' }}>
         <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.375rem 1rem', borderRadius: '9999px', background: 'rgba(124,179,66,0.12)', border: '1px solid rgba(124,179,66,0.3)', color: 'var(--color-accent)', fontSize: '0.8125rem', fontWeight: 600, marginBottom: '1rem' }}>
@@ -24,7 +24,7 @@ export const ServicosSection: React.FC = () => (
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(290px, 1fr))', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {services.map((s, i) => (
           <motion.div key={s.id}
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}

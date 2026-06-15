@@ -11,8 +11,8 @@ export const SobreSection: React.FC = () => (
   <section id="sobre" style={{ padding: '6rem 0', background: 'var(--color-bg)', position: 'relative', overflow: 'hidden' }}>
     {/* Subtle bg pattern */}
     <div style={{ position: 'absolute', top: 0, right: 0, width: '400px', height: '400px', background: 'radial-gradient(circle, rgba(165,214,167,0.15) 0%, transparent 70%)', borderRadius: '50%', transform: 'translate(30%, -30%)' }} />
-    <div style={{ maxWidth: '1280px', margin: '0 auto', padding: '0 1.5rem' }}>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+    <div className="max-w-7xl mx-auto px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         {/* Visual side */}
         <motion.div
           initial={{ opacity: 0, x: -50 }} whileInView={{ opacity: 1, x: 0 }}
@@ -28,7 +28,7 @@ export const SobreSection: React.FC = () => (
             <p style={{ opacity: 0.85, lineHeight: 1.75, fontSize: '0.9375rem' }}>
               Proporcionar um espaço de acolhimento e crescimento emocional, onde cada pessoa encontre suporte profissional para florescer em todas as dimensões da sua vida.
             </p>
-            <div style={{ marginTop: '2rem', display: 'flex', gap: '2rem' }}>
+            <div className="mt-8 flex flex-wrap gap-8 justify-start">
               {[{ n: '+248', l: 'Pacientes' }, { n: '4', l: 'Psicólogos' }, { n: '7', l: 'Serviços' }].map(s => (
                 <div key={s.l} style={{ textAlign: 'center' }}>
                   <div style={{ fontSize: '1.75rem', fontWeight: 800, fontFamily: 'Playfair Display', color: '#A5D6A7' }}>{s.n}</div>

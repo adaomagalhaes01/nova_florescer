@@ -19,7 +19,7 @@ export const EquipaSection: React.FC = () => (
         </p>
       </motion.div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(270px, 1fr))', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         {team.map((member, i) => (
           <motion.div key={member.id}
             initial={{ opacity: 0, y: 40 }} whileInView={{ opacity: 1, y: 0 }}

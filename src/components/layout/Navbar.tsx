@@ -62,7 +62,7 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Nav */}
           {isLanding && (
-            <nav style={{ display: 'flex', alignItems: 'center', gap: '0.25rem' }} className="hidden-mobile">
+            <nav className="hidden md:flex items-center gap-1">
               {navLinks.map(link => (
                 <a
                   key={link.href}
@@ -96,22 +96,21 @@ export const Navbar: React.FC = () => {
             <button
               onClick={toggleTheme}
               aria-label="Toggle dark mode"
+              className="flex items-center justify-center transition-all"
               style={{
                 width: '38px', height: '38px',
                 borderRadius: '50%',
                 border: '1.5px solid var(--color-border)',
                 background: 'var(--color-surface)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer',
                 color: 'var(--color-text-muted)',
-                transition: 'all var(--transition-fast)',
               }}
             >
               {isDark ? <Sun size={16} /> : <Moon size={16} />}
             </button>
 
             {isLanding && (
-              <>
+              <div className="hidden md:flex items-center gap-3">
                 <Link
                   to="/paciente/login"
                   style={{
@@ -161,20 +160,19 @@ export const Navbar: React.FC = () => {
                 >
                   <Phone size={14} /> Agendar
                 </a>
-              </>
+              </div>
             )}
 
             {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(o => !o)}
-              className="mobile-only"
+              className="flex md:hidden items-center justify-center"
               aria-label="Menu"
               style={{
                 width: '38px', height: '38px',
                 borderRadius: '50%',
                 border: '1.5px solid var(--color-border)',
                 background: 'var(--color-surface)',
-                display: 'flex', alignItems: 'center', justifyContent: 'center',
                 cursor: 'pointer',
                 color: 'var(--color-text)',
               }}
@@ -241,11 +239,6 @@ export const Navbar: React.FC = () => {
           </motion.div>
         )}
       </AnimatePresence>
-
-      <style>{`
-        @media (min-width: 768px) { .mobile-only { display: none !important; } }
-        @media (max-width: 767px) { .hidden-mobile { display: none !important; } }
-      `}</style>
     </>
   );
 };

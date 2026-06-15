@@ -78,7 +78,7 @@ export const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Stats Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 mb-8">
         {stats.map((stat, i) => (
           <motion.div
             key={stat.label}
@@ -123,7 +123,7 @@ export const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Charts + Appointments Row */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 380px', gap: '1.5rem', marginBottom: '1.5rem' }}>
+      <div className="grid grid-cols-1 xl:grid-cols-[1fr_380px] gap-6 mb-6">
         {/* Revenue Chart */}
         <motion.div
           custom={4}
@@ -245,7 +245,7 @@ export const AdminDashboard: React.FC = () => {
       </div>
 
       {/* Recent Patients + Quick Actions */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Recent Patients */}
         <motion.div
           custom={6}

@@ -39,7 +39,7 @@ export const ContactosSection: React.FC = () => {
           </p>
         </motion.div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2.5rem', alignItems: 'start' }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
           {/* Contact info */}
           <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}
             transition={{ duration: 0.7 }}>
@@ -90,7 +90,7 @@ export const ContactosSection: React.FC = () => {
               )}
 
               <form onSubmit={handleSubmit(onSubmit)} style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
                     <label style={{ display: 'block', fontSize: '0.8125rem', fontWeight: 600, color: 'var(--color-text)', marginBottom: '0.5rem' }}>Nome *</label>
                     <input className="form-input" placeholder="O seu nome" {...register('name', { required: true })} style={{ border: errors.name ? '1.5px solid #ef4444' : undefined } as any} />
