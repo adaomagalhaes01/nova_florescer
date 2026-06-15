@@ -3,7 +3,7 @@ import { Outlet, NavLink, useNavigate, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   LayoutDashboard, Users, Calendar, CreditCard, BarChart3,
-  UserCog, Settings, LogOut, Menu, Leaf, Bell, Search, ChevronRight
+  UserCog, Settings, LogOut, Menu, Bell, Search, ChevronRight
 } from 'lucide-react';
 
 const navItems = [
@@ -24,7 +24,7 @@ export const AdminLayout: React.FC = () => {
 
   const currentPage = navItems.find(item => location.pathname.startsWith(item.to))?.label || 'Dashboard';
 
-  const SidebarContent = ({ isDesktopCollapsed }: { isDesktopCollapsed?: boolean }) => {
+  const renderSidebarContent = ({ isDesktopCollapsed }: { isDesktopCollapsed?: boolean }) => {
     const showText = !isDesktopCollapsed;
     return (
       <div style={{ display: 'flex', flexDirection: 'column', height: '100%', background: 'linear-gradient(180deg, #0F5B3A 0%, #0d3d27 100%)' }}>
@@ -122,7 +122,7 @@ export const AdminLayout: React.FC = () => {
           boxShadow: '4px 0 24px rgba(0,0,0,0.15)', zIndex: 40,
         }}
       >
-        <SidebarContent isDesktopCollapsed={!sidebarOpen} />
+        {renderSidebarContent({ isDesktopCollapsed: !sidebarOpen })}
       </motion.aside>
 
       {/* Mobile Sidebar Overlay */}
@@ -135,7 +135,7 @@ export const AdminLayout: React.FC = () => {
             <motion.aside initial={{ x: -260 }} animate={{ x: 0 }} exit={{ x: -260 }}
               transition={{ duration: 0.3 }}
               style={{ position: 'fixed', top: 0, left: 0, bottom: 0, width: '260px', zIndex: 101, boxShadow: '4px 0 24px rgba(0,0,0,0.15)' }}>
-              <SidebarContent isDesktopCollapsed={false} />
+              {renderSidebarContent({ isDesktopCollapsed: false })}
             </motion.aside>
           </>
         )}

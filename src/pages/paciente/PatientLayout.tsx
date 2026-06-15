@@ -22,7 +22,7 @@ export const PatientLayout: React.FC = () => {
 
   const sidebarW = collapsed ? '72px' : '240px';
 
-  const SidebarContent = () => (
+  const renderSidebarContent = () => (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100%', padding: '1rem 0.75rem' }}>
       {/* Logo */}
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', padding: '0.5rem 0.25rem', marginBottom: '1.5rem', overflow: 'hidden' }}>
@@ -75,7 +75,7 @@ export const PatientLayout: React.FC = () => {
       <motion.aside animate={{ width: sidebarW }} transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
         style={{ background: 'var(--color-white)', borderRight: '1px solid var(--color-border)', position: 'fixed', top: 0, left: 0, bottom: 0, zIndex: 100, overflow: 'hidden', flexShrink: 0, boxShadow: 'var(--shadow-sm)' }}
         className="desktop-sidebar">
-        <SidebarContent />
+        {renderSidebarContent()}
         {/* Collapse toggle */}
         <button onClick={() => setCollapsed(c => !c)}
           style={{ position: 'absolute', top: '50%', right: '-12px', transform: 'translateY(-50%)', width: '24px', height: '24px', borderRadius: '50%', background: 'var(--color-white)', border: '1.5px solid var(--color-border)', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer', color: 'var(--color-text-muted)', zIndex: 10 }}>
@@ -92,7 +92,7 @@ export const PatientLayout: React.FC = () => {
               style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.4)', zIndex: 200 }} />
             <motion.aside initial={{ x: -240 }} animate={{ x: 0 }} exit={{ x: -240 }}
               transition={{ duration: 0.3 }} style={{ position: 'fixed', top: 0, left: 0, bottom: 0, width: '240px', background: 'var(--color-white)', zIndex: 201, borderRight: '1px solid var(--color-border)' }}>
-              <SidebarContent />
+              {renderSidebarContent()}
             </motion.aside>
           </>
         )}

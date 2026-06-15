@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Sun, Moon, Menu, X, Leaf, Phone } from 'lucide-react';
+import { Sun, Moon, Menu, X, Phone } from 'lucide-react';
 import { useTheme } from '../../context/ThemeContext';
 
 const navLinks = [

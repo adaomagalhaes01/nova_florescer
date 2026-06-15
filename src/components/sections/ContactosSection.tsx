@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { MessageCircle, Phone, Mail, MapPin, Clock, Send } from 'lucide-react';
 import { useForm } from 'react-hook-form';
